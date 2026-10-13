@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>World Wonders Quest</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #7F27FF; /* Solid background color */
+      color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 700px;
+      text-align: center;
+      background-color: #F5E5E1; /* Container background */
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      color: #7F27FF;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+      color: #FFFFFF;
+      text-shadow: 1px 1px 4px #7F27FF;
+    }
+
+    .quiz-box {
+      margin-top: 20px;
+    }
+
+    .question {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: #7F27FF;
+    }
+
+    .btn-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .btn {
+      padding: 15px;
+      background-color: #FFFFFF;
+      border: 2px solid #7F27FF;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1rem;
+      color: #7F27FF;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #F5E5E1;
+    }
+
+    .next-btn {
+      margin-top: 30px;
+      padding: 12px 30px;
+      background-color: #FFFFFF;
+      color: #7F27FF;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      display: none;
+      transition: background 0.3s ease;
+    }
+
+    .next-btn:hover {
+      background-color: #F5E5E1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>World Wonders Quest 🌍</h1>
+    <div class="quiz-box">
+      <div id="question" class="question">Question appears here</div>
+      <div id="answer-buttons" class="btn-grid"></div>
+      <button id="next-btn" class="next-btn">Next</button>
+    </div>
+  </div>
+</body>
+</html>

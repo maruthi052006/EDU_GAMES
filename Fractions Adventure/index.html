@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🧩 Fractions Adventure 🟰</title>
+  <style>
+    /* === GLOBAL THEME === */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #7F27FF; /* solid background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #2D2D2D;
+    }
+
+    /* === GAME CONTAINER === */
+    .container {
+      background-color: #FFFFFF;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 700px;
+      width: 90%;
+      animation: fadeIn 1s ease;
+    }
+
+    /* === TITLE === */
+    .title {
+      font-size: 2.5rem;
+      color: #7F27FF;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    /* === INSTRUCTIONS === */
+    .instructions {
+      font-size: 1.1rem;
+      color: #5A2DB5;
+      margin-bottom: 25px;
+    }
+
+    /* === QUESTION === */
+    .question-box {
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin-bottom: 25px;
+      color: #2D2D2D;
+    }
+
+    /* === OPTIONS === */
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .options button {
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      background-color: #FFFFFF;
+      border: 2px solid #7F27FF;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      color: #2D2D2D;
+    }
+
+    .options button:hover {
+      background-color: #7F27FF;
+      color: #FFFFFF;
+      transform: scale(1.05);
+    }
+
+    /* === FEEDBACK === */
+    #feedback {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-top: 15px;
+      color: #7F27FF;
+    }
+
+    /* === NEXT BUTTON === */
+    #next {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      padding: 10px 25px;
+      background-color: #7F27FF;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 10px;
+      display: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    #next:hover {
+      background-color: #F5E5E1;
+      color: #2D2D2D;
+    }
+
+    /* === ANIMATION === */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">🧩 Fractions Adventure 🟰</h1>
+    <p class="instructions">Choose the correct answer to each fraction question!</p>
+
+    <div class="question-box" id="question"></div>
+    <div class="options" id="options"></div>
+    <div id="feedback"></div>
+
+    <button id="next" onclick="loadNext()">Next ➡️</button>
+  </div>
+
+  <script src="fractions-questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

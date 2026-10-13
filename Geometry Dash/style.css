@@ -1,0 +1,94 @@
+/* Cinematic Style for Geometry Dash */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #89f7fe, #66a6ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #1e272e;
+  margin-bottom: 10px;
+}
+
+.instructions {
+  font-size: 1.1rem;
+  color: #576574;
+  margin-bottom: 30px;
+}
+
+.question-box {
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #2d3436;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.options button {
+  padding: 12px 26px;
+  font-size: 1.1rem;
+  background-color: #feca57;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.options button:hover {
+  background-color: #ff9f43;
+  transform: scale(1.05);
+  color: #fff;
+}
+
+#feedback {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#next {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  background: #00b894;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  display: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#next:hover {
+  background-color: #019874;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}

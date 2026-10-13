@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nature Navigator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #7F27FF;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #FFFFFF;
+    }
+
+    .container {
+      background-color: #7F27FF;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(245, 229, 225, 0.3);
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+    }
+
+    h1 {
+      color: #F5E5E1;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 18px;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+    }
+
+    #question {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #F5E5E1;
+    }
+
+    .btn-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #F5E5E1;
+      border-radius: 10px;
+      background-color: #7F27FF;
+      color: #F5E5E1;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #F5E5E1;
+      color: #7F27FF;
+    }
+
+    #next-btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: 2px solid #F5E5E1;
+      border-radius: 10px;
+      background-color: #7F27FF;
+      color: #F5E5E1;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #next-btn:hover {
+      background-color: #FFFFFF;
+      color: #7F27FF;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌿 Nature Navigator 🌍</h1>
+    <p class="tagline">Explore nature and become an Eco Hero!</p>
+    <div id="quiz-container">
+      <div id="question">Loading...</div>
+      <div id="answer-buttons" class="btn-grid"></div>
+      <button id="next-btn">Next</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+.shape-slot {
+  width: 100px;
+  height: 100px;
+  font-size: 40px;
+  border: 2px dashed #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.shape-slot.matched {
+  background-color: #28a745;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.draggable-shape {
+  padding: 12px 24px;
+  border: 2px solid #444;
+  border-radius: 12px;
+  font-size: 18px;
+  cursor: grab;
+  user-select: none;
+  background-color: white;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.draggable-shape:active {
+  transform: scale(1.05);
+}
+
+#result {
+  font-weight: 600;
+  transition: all 0.3s ease;
+}

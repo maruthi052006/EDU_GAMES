@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #74b9ff, #a29bfe);
+  font-family: 'Comic Sans MS', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #6c5ce7;
+  margin-bottom: 10px;
+}
+
+.instructions {
+  font-size: 1.2rem;
+  color: #2d3436;
+  margin-bottom: 20px;
+}
+
+.game-area {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.questions, .answers {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card {
+  padding: 15px 25px;
+  background: #ffeaa7;
+  font-size: 1.5rem;
+  border-radius: 12px;
+  cursor: grab;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  user-select: none;
+}
+
+.card:hover {
+  background: #fab1a0;
+}
+
+.card.drop-target {
+  background: #55efc4;
+  color: white;
+}
+
+#result {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.play-again {
+  display: none;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  background: #fdcb6e;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.play-again:hover {
+  background: #e17055;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}

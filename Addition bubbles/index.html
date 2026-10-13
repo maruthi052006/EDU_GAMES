@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Addition Bubbles</title>
+  <style>
+    /* Base Reset and Font */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #7F27FF; /* Main background color */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #FFFFFF;
+    }
+
+    /* Container box */
+    .container {
+      background-color: #91C4C3;
+      border: 3px solid #F5E5E1;
+      padding: 40px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(245, 229, 225, 0.5);
+      animation: fadeIn 0.7s ease-in-out;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    /* Title and Question */
+    .title {
+      font-size: 2.5rem;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #F5E5E1;
+    }
+
+    /* Bubble area */
+    .bubble-area {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Bubble style */
+    .bubble {
+      background: #F5E5E1;
+      color: #7F27FF;
+      font-size: 2rem;
+      padding: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(245, 229, 225, 0.3);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .bubble:hover {
+      transform: scale(1.2);
+      background: #FFFFFF;
+      color: #7F27FF;
+    }
+
+    /* Feedback */
+    #feedback {
+      font-size: 1.8rem;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #FFFFFF;
+    }
+
+    /* Play Again Button */
+    .play-again {
+      display: none;
+      margin-top: 25px;
+      background: #F5E5E1;
+      border: 2px solid #FFFFFF;
+      color: #7F27FF;
+      padding: 10px 25px;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .play-again:hover {
+      background: #FFFFFF;
+      color: #7F27FF;
+      border-color: #F5E5E1;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">➕ Addition Bubbles 🎈</h1>
+    <div class="question" id="question">Loading...</div>
+    <div class="bubble-area" id="bubble-area"></div>
+    <div id="feedback"></div>
+    <button class="play-again" onclick="generateQuestion()">🔄 Try Again</button>
+  </div>
+
+  <script>
+    // Simple addition bubble game logic
+    function generateQuestion() {
+      const num1 = Math.floor(Math.random() * 10) + 1;
+      const num2 = Math.floor(Math.random() * 10) + 1;
+      const correctAnswer = num1 + num2;
+
+      document.getElementById('question').textContent = `${num1} + ${num2} = ?`;
+      document.getElementById('feedback').textContent = '';
+      document.querySelector('.play-again').style.display = 'none';
+
+      const bubbleArea = document.getElementById('bubble-area');
+      bubbleArea.innerHTML = '';
+
+      const answers = new Set();
+      answers.add(correctAnswer);
+      while (answers.size < 4) {
+        answers.add(Math.floor(Math.random() * 20) + 2);
+      }
+
+      Array.from(answers).sort(() => Math.random() - 0.5).forEach(num => {
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+        bubble.textContent = num;
+        bubble.onclick = () => checkAnswer(num, correctAnswer);
+        bubbleArea.appendChild(bubble);
+      });
+    }
+
+    function checkAnswer(selected, correct) {
+      const feedback = document.getElementById('feedback');
+      const bubbles = document.querySelectorAll('.bubble');
+      bubbles.forEach(b => b.style.pointerEvents = 'none');
+
+      if (selected === correct) {
+        feedback.textContent = '✅ Correct!';
+        feedback.style.color = '#F5E5E1';
+      } else {
+        feedback.textContent = '❌ Try Again!';
+        feedback.style.color = '#FFFFFF';
+      }
+
+      document.querySelector('.play-again').style.display = 'inline-block';
+    }
+
+    // Initialize game
+    generateQuestion();
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #f0f8ff, #e6f7ff);
+}
+
+.clock {
+  width: 220px;
+  height: 220px;
+  border: 8px solid #333;
+  border-radius: 50%;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.hand {
+  position: absolute;
+  background-color: #000;
+  transform-origin: bottom center;
+  left: 50%;
+  bottom: 50%;
+  transform: translateX(-50%) rotate(0deg);
+}
+
+.hour-hand {
+  width: 6px;
+  height: 60px;
+  background-color: #0d47a1;
+}
+
+.minute-hand {
+  width: 4px;
+  height: 100px;
+  background-color: #1565c0;
+}
+
+#options button {
+  font-size: 1.25rem;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: #bbdefb;
+  color: #0d47a1;
+  border: 2px solid #0d47a1;
+  transition: all 0.3s ease-in-out;
+}
+
+#options button:hover {
+  background-color: #0d47a1;
+  color: white;
+  transform: scale(1.05);
+}
+
+#feedback {
+  transition: all 0.3s ease-in-out;
+  font-size: 1.3rem;
+}

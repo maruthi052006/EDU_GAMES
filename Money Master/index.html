@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💰 Money Master</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #7F27FF;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #F5E5E1;
+    }
+
+    .container {
+      text-align: center;
+      background-color: #7F27FF;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(245, 229, 225, 0.5);
+      width: 90%;
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+    }
+
+    .question-box {
+      font-size: 1.4rem;
+      margin: 20px 0;
+      color: #F5E5E1;
+    }
+
+    .options-box button {
+      display: block;
+      margin: 10px auto;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: 2px solid #F5E5E1;
+      border-radius: 10px;
+      background-color: #7F27FF;
+      color: #F5E5E1;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .options-box button:hover {
+      background-color: #F5E5E1;
+      color: #7F27FF;
+      transform: scale(1.05);
+    }
+
+    #next {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: 2px solid #F5E5E1;
+      background-color: #7F27FF;
+      color: #F5E5E1;
+      border-radius: 10px;
+      display: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #next:hover {
+      background-color: #F5E5E1;
+      color: #7F27FF;
+      transform: scale(1.05);
+    }
+
+    .feedback {
+      font-weight: bold;
+      margin-top: 15px;
+      font-size: 1.2rem;
+      color: #FFFFFF;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💰 Money Master</h1>
+    <div id="question" class="question-box">Question will appear here</div>
+    <div id="options" class="options-box"></div>
+    <div id="feedback" class="feedback"></div>
+    <button id="next" onclick="loadNext()">Next Question</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

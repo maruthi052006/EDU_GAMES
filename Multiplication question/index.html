@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>✖️ Multiplication Match 🎯</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #7F27FF;
+      font-family: 'Comic Sans MS', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #F5E5E1;
+    }
+
+    .container {
+      background-color: #7F27FF;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(245, 229, 225, 0.5);
+      text-align: center;
+      width: 90%;
+      max-width: 800px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1.title {
+      font-size: 2.5rem;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+    }
+
+    .instructions {
+      font-size: 1.2rem;
+      color: #F5E5E1;
+      margin-bottom: 20px;
+    }
+
+    .game-area {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .questions, .answers {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .card {
+      padding: 15px 25px;
+      background-color: #7F27FF;
+      font-size: 1.5rem;
+      border-radius: 12px;
+      cursor: grab;
+      box-shadow: 0 5px 15px rgba(245, 229, 225, 0.3);
+      transition: all 0.3s ease;
+      user-select: none;
+      color: #F5E5E1;
+      border: 2px solid #F5E5E1;
+    }
+
+    .card:hover {
+      background-color: #F5E5E1;
+      color: #7F27FF;
+      transform: scale(1.05);
+    }
+
+    .card.drop-target {
+      background-color: #F5E5E1;
+      color: #7F27FF;
+      font-weight: bold;
+    }
+
+    #result {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 15px;
+      color: #FFFFFF;
+    }
+
+    .play-again {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.2rem;
+      background-color: #7F27FF;
+      padding: 10px 25px;
+      border: 2px solid #F5E5E1;
+      border-radius: 10px;
+      color: #F5E5E1;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .play-again:hover {
+      background-color: #F5E5E1;
+      color: #7F27FF;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">✖️ Multiplication Match 🎯</h1>
+    <p class="instructions">Drag the multiplication cards onto the correct answer cards</p>
+
+    <div class="game-area">
+      <div class="questions" id="questionCards"></div>
+      <div class="answers" id="answerCards"></div>
+    </div>
+
+    <div id="result"></div>
+    <button class="play-again" onclick="startGame()">🔁 Play Again</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

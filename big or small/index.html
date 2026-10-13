@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Big or Small?</title>
+  <style>
+    /* === Base Page === */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #7F27FF; /* main solid color */
+      font-family: 'Comic Sans MS', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #FFFFFF; /* default text color */
+    }
+
+    /* === Container === */
+    .container {
+      text-align: center;
+      background-color: #7F27FF; /* keep unified theme */
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(245, 229, 225, 0.3);
+      animation: fadeIn 1s ease-in-out;
+      width: 90%;
+      max-width: 600px;
+      border: 2px solid #F5E5E1;
+    }
+
+    /* === Title === */
+    .title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #FFFFFF;
+    }
+
+    /* === Card Area === */
+    .card-area {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      width: 100px;
+      height: 100px;
+      font-size: 3rem;
+      background: #F5E5E1;
+      color: #7F27FF;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(245, 229, 225, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: popIn 0.4s ease-in-out;
+      border: 2px solid #FFFFFF;
+    }
+
+    /* === Buttons === */
+    .buttons button {
+      font-size: 1.5rem;
+      margin: 10px;
+      padding: 10px 20px;
+      background: #F5E5E1;
+      color: #7F27FF;
+      border: 2px solid #FFFFFF;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .buttons button:hover {
+      background: #FFFFFF;
+      color: #7F27FF;
+      transform: scale(1.05);
+    }
+
+    /* === Feedback === */
+    #feedback {
+      margin-top: 20px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #FFFFFF;
+    }
+
+    /* === Play Again Button === */
+    .play-again {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.2rem;
+      background: #F5E5E1;
+      color: #7F27FF;
+      padding: 10px 20px;
+      border: 2px solid #FFFFFF;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .play-again:hover {
+      background: #FFFFFF;
+      color: #7F27FF;
+    }
+
+    /* === Animations === */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0); }
+      to { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">🔢 Big or Small? 🐘🐁</h1>
+    <div class="card-area">
+      <div class="card" id="card1">?</div>
+      <div class="card" id="card2">?</div>
+    </div>
+    
+    <div class="buttons">
+      <button onclick="checkAnswer('big')">Pick Bigger</button>
+      <button onclick="checkAnswer('small')">Pick Smaller</button>
+    </div>
+
+    <div id="feedback"></div>
+    <button class="play-again" onclick="loadNumbers()">🔁 Try Another</button>
+  </div>
+
+  <script>
+    let num1, num2;
+
+    function loadNumbers() {
+      num1 = Math.floor(Math.random() * 100) + 1;
+      num2 = Math.floor(Math.random() * 100) + 1;
+      document.getElementById('card1').textContent = num1;
+      document.getElementById('card2').textContent = num2;
+      document.getElementById('feedback').textContent = "";
+      document.querySelector('.play-again').style.display = "none";
+    }
+
+    function checkAnswer(choice) {
+      let feedback = document.getElementById('feedback');
+      let result = "";
+
+      if (choice === 'big') {
+        result = num1 > num2 ? "Correct! 🎉" : "Oops! Try Again 😅";
+      } else {
+        result = num1 < num2 ? "Correct! 🎉" : "Oops! Try Again 😅";
+      }
+
+      feedback.textContent = result;
+      document.querySelector('.play-again').style.display = "inline-block";
+    }
+
+    // Load first pair
+    window.onload = loadNumbers;
+  </script>
+</body>
+</html>

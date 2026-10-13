@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>⏰ Time Teller Game</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #7F27FF; /* Solid main background */
+      color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #F5E5E1; /* Base container color */
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(255,255,255,0.3);
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+      color: #7F27FF;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      color: #FFFFFF;
+      text-shadow: 1px 1px 4px #F5E5E1;
+    }
+
+    p {
+      color: #FFFFFF;
+    }
+
+    .clock {
+      width: 220px;
+      height: 220px;
+      border: 8px solid #FFFFFF;
+      border-radius: 50%;
+      position: relative;
+      background-color: #F5E5E1;
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+      margin: 20px auto;
+    }
+
+    .hand {
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+      transform-origin: bottom center;
+      transform: translateX(-50%) rotate(0deg);
+    }
+
+    .hour-hand {
+      width: 6px;
+      height: 60px;
+      background-color: #7F27FF;
+    }
+
+    .minute-hand {
+      width: 4px;
+      height: 100px;
+      background-color: #7F27FF;
+    }
+
+    #options {
+      display: grid;
+      gap: 15px;
+      margin: 20px auto 0;
+      width: 60%;
+    }
+
+    #options button {
+      font-size: 1.25rem;
+      padding: 12px;
+      border-radius: 12px;
+      background-color: #FFFFFF;
+      color: #7F27FF;
+      border: 2px solid #7F27FF;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    #options button:hover {
+      background-color: #F5E5E1;
+      color: #7F27FF;
+      transform: scale(1.05);
+    }
+
+    #feedback {
+      margin-top: 15px;
+      font-size: 1.3rem;
+      transition: all 0.3s ease-in-out;
+      min-height: 24px;
+    }
+
+    button.next-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 12px;
+      background-color: #FFFFFF;
+      color: #7F27FF;
+      border: 2px solid #7F27FF;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    button.next-btn:hover {
+      background-color: #F5E5E1;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>⏰ Time Teller</h2>
+    <p class="fs-5 mb-3">Look at the clock and tell the correct time.</p>
+    <div class="clock" id="clock"></div>
+    <div id="options">
+      <button>12:00</button>
+      <button>3:00</button>
+      <button>6:00</button>
+      <button>9:00</button>
+    </div>
+    <p id="feedback"></p>
+    <button class="next-btn" onclick="nextClock()">Next Clock</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌍 Globe Trotters: Continents & Oceans Explorer</title>
+  <style>
+    :root {
+      --main-bg: #7F27FF;
+      --accent: #F5E5E1;
+      --text: #F5E5E1;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--main-bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: var(--main-bg);
+      border: 2px solid var(--accent);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(245, 229, 225, 0.3);
+      padding: 2rem;
+      width: 90%;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 8px rgba(245, 229, 225, 0.3);
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .game-section {
+      margin-bottom: 2.5rem;
+      padding: 1.5rem;
+      border: 2px solid var(--accent);
+      border-radius: 15px;
+      background-color: var(--main-bg);
+      box-shadow: 0 0 10px rgba(245, 229, 225, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .game-section:hover {
+      transform: scale(1.02);
+    }
+
+    .question-box {
+      font-size: 1.2rem;
+      color: var(--accent);
+      margin: 1rem 0;
+      min-height: 40px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: var(--accent);
+      color: var(--main-bg);
+      border: 2px solid var(--accent);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: var(--main-bg);
+      color: var(--accent);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌍 Globe Trotters: Continents & Oceans Explorer</h1>
+
+    <div class="game-section">
+      <h2>1. Match Continents to Clues</h2>
+      <div class="question-box" id="continent-questions"></div>
+      <button onclick="nextContinentQuestion()">Next</button>
+    </div>
+
+    <div class="game-section">
+      <h2>2. Oceans Quiz</h2>
+      <div class="question-box" id="ocean-questions"></div>
+      <button onclick="nextOceanQuestion()">Next</button>
+    </div>
+
+    <div class="game-section">
+      <h2>3. Hemisphere Challenge</h2>
+      <div class="question-box" id="hemisphere-questions"></div>
+      <button onclick="nextHemisphereQuestion()">Next</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

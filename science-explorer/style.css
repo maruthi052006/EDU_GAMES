@@ -1,0 +1,52 @@
+body {
+  font-family: 'Fredoka', sans-serif;
+  background: linear-gradient(135deg, #96fbc4, #f9f586);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.title-glow {
+  color: #198754;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+}
+
+.item, .drop-zone {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 2px solid #6c757d;
+  background-color: #f8f9fa;
+  cursor: grab;
+  transition: background 0.3s ease;
+}
+
+.item.dragging {
+  opacity: 0.5;
+}
+
+.drop-zone.correct {
+  background-color: #d4edda !important;
+  border-color: #28a745;
+}
+
+.drop-zone.wrong {
+  background-color: #f8d7da !important;
+  border-color: #dc3545;
+}

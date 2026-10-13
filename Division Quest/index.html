@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>👑 Division Quest 🗝️</title>
+  <style>
+    /* === GLOBAL THEME === */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #7F27FF; /* main solid background */
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #2D2D2D;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 50px auto;
+      background-color: #FFFFFF;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      color: #7F27FF;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .instructions {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      color: #5A2DB5;
+    }
+
+    .quest-box {
+      background-color: #F5E5E1;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .question {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #2D2D2D;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .options button {
+      margin: 8px;
+      padding: 12px 25px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 10px;
+      border: 2px solid #7F27FF;
+      background-color: #FFFFFF;
+      color: #2D2D2D;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .options button:hover {
+      background-color: #7F27FF;
+      color: #FFFFFF;
+      transform: scale(1.05);
+    }
+
+    #status {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.4rem;
+      color: #7F27FF;
+    }
+
+    #restart {
+      display: none;
+      margin-top: 25px;
+      padding: 10px 25px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      background-color: #7F27FF;
+      color: #FFFFFF;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    #restart:hover {
+      background-color: #F5E5E1;
+      color: #2D2D2D;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">👑 Division Quest 🗝️</h1>
+    <p class="instructions">Solve the division to unlock the gate!</p>
+
+    <div class="quest-box">
+      <div id="question" class="question">Loading...</div>
+      <div class="options" id="options"></div>
+    </div>
+
+    <div id="status"></div>
+    <button id="restart" onclick="startQuest()">🔁 Try Again</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

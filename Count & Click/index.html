@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Count & Click 🎯</title>
+  <style>
+    /* === GLOBAL THEME COLORS === */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #7F27FF; /* main purple background */
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      color: #2D2D2D;
+    }
+
+    .container {
+      background-color: #FFFFFF;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+      max-width: 90%;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #7F27FF;
+      text-shadow: 1px 1px #F5E5E1;
+    }
+
+    #object-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+      min-height: 100px;
+    }
+
+    #object-container img {
+      width: 70px;
+      margin: 10px;
+      transform: scale(0.8);
+      animation: popIn 0.5s ease forwards;
+    }
+
+    .options button {
+      font-size: 1.5rem;
+      margin: 10px;
+      padding: 10px 20px;
+      border: 2px solid #7F27FF;
+      border-radius: 12px;
+      background: #F5E5E1;
+      color: #2D2D2D;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    .options button:hover {
+      background: #7F27FF;
+      color: #FFFFFF;
+      transform: scale(1.1);
+    }
+
+    #result {
+      font-size: 1.8rem;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #7F27FF;
+    }
+
+    .play-again {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.2rem;
+      background: #7F27FF;
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      font-weight: bold;
+    }
+
+    .play-again:hover {
+      background: #F5E5E1;
+      color: #2D2D2D;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0); }
+      to { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">🍎 Count & Click 🎯</h1>
+    <div class="game-area">
+      <div id="object-container"></div>
+      <div class="options">
+        <button onclick="checkAnswer(2)">2</button>
+        <button onclick="checkAnswer(3)">3</button>
+        <button onclick="checkAnswer(4)">4</button>
+      </div>
+    </div>
+    <div id="result"></div>
+    <button class="play-again" onclick="loadGame()">🔄 Play Again</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

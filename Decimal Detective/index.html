@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🔎 Decimal Detective 🔢</title>
+  <style>
+    /* === COLOR THEME === */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #7F27FF; /* main background */
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #2D2D2D;
+    }
+
+    .container {
+      background-color: #FFFFFF;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 90%;
+      max-width: 700px;
+      animation: fadeIn 0.8s ease;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      color: #7F27FF;
+      margin-bottom: 10px;
+    }
+
+    .instructions {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #5A2DB5;
+    }
+
+    .question-box {
+      font-size: 1.5rem;
+      margin: 20px 0;
+      font-weight: bold;
+      color: #2D2D2D;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .options button {
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      background-color: #F5E5E1;
+      border: 2px solid #7F27FF;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #2D2D2D;
+      font-weight: 600;
+    }
+
+    .options button:hover {
+      background-color: #7F27FF;
+      color: #FFFFFF;
+      transform: scale(1.05);
+    }
+
+    #feedback {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-top: 15px;
+      color: #7F27FF;
+    }
+
+    #next {
+      margin-top: 25px;
+      font-size: 1.1rem;
+      padding: 10px 25px;
+      background: #7F27FF;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: none;
+      font-weight: 600;
+    }
+
+    #next:hover {
+      background-color: #F5E5E1;
+      color: #2D2D2D;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">🔎 Decimal Detective 🔢</h1>
+    <p class="instructions">Read the question carefully and pick the right answer!</p>
+
+    <div class="question-box" id="question">Loading...</div>
+
+    <div class="options" id="options"></div>
+
+    <div id="feedback"></div>
+    <button id="next" onclick="loadNext()">Next ➡️</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

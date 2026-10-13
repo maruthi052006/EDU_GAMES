@@ -1,0 +1,52 @@
+body.bg-matching {
+  background: linear-gradient(to right, #f8fbff, #dbeafe);
+  font-family: 'Fredoka', sans-serif;
+}
+
+.fade-in {
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.title-cinematic {
+  font-weight: 700;
+  color: #2563eb;
+  text-shadow: 1px 1px 0 white;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.match-btn {
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+
+.match-btn:hover {
+  transform: scale(1.05);
+}
+
+.selected {
+  background-color: #ffe066 !important;
+}
+
+.correct {
+  background-color: #51cf66 !important;
+  color: white !important;
+}
+
+.wrong {
+  background-color: #fa5252 !important;
+  color: white !important;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🧠 Spelling Bee Challenge</title>
+  <style>
+    /* Global body settings */
+    body {
+      font-family: 'Fredoka', sans-serif;
+      background-color: #7F27FF; /* main solid background */
+      color: #FFFFFF; /* default text color */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Container card */
+    .container {
+      background-color: #F5E5E1; /* light base color */
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #FFFFFF; /* main accent for headings */
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background-color: #7F27FF; /* darker card contrast */
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    }
+
+    #wordHint {
+      font-size: 1.2rem;
+      color: #FFFFFF;
+      margin-bottom: 15px;
+    }
+
+    input {
+      width: 80%;
+      font-size: 1.1rem;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 2px solid #FFFFFF;
+      text-align: center;
+      margin-bottom: 10px;
+      background-color: #7F27FF;
+      color: #FFFFFF;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #F5E5E1;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 1rem;
+      border: 2px solid #FFFFFF;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.2s ease, background 0.3s ease, color 0.3s ease;
+      background-color: #FFFFFF;
+      color: #7F27FF;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background-color: #F5E5E1;
+      color: #7F27FF;
+    }
+
+    #feedback {
+      font-size: 1.1rem;
+      margin-top: 10px;
+      min-height: 24px;
+      transition: color 0.3s ease-in-out;
+    }
+
+    #feedback.correct {
+      color: #F5E5E1;
+    }
+
+    #feedback.incorrect {
+      color: #FFFFFF;
+    }
+  </style>
+</head>
+<body>
+  <div class="container fade-in">
+    <h2>🧠 Spelling Bee Challenge</h2>
+    <div class="card">
+      <p id="wordHint">Loading...</p>
+      <input type="text" id="userInput" placeholder="Type your spelling here" />
+      <div>
+        <button>Check</button>
+        <button>Next Word</button>
+      </div>
+      <p id="feedback"></p>
+    </div>
+  </div>
+</body>
+</html>

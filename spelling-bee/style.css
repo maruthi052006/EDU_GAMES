@@ -1,0 +1,51 @@
+input {
+  max-width: 300px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+#feedback {
+  transition: all 0.3s ease-in-out;
+}
+#feedback.correct {
+  color: green;
+}
+
+#feedback.incorrect {
+  color: red;
+}
+
+#next-word {
+  display: none;
+}
+
+#hint {
+  display: none;
+}
+
+#hint-button {
+  display: none;
+}
+
+#score {
+  display: none;
+}
+
+#game-over {
+  display: none;
+}
+
+#game-over-message {
+  font-size: 24px;
+  color: red;
+}
+
+#game-over-score {
+  font-size: 18px;
+  color: green;
+}
+
+#game-over-restart {
+  font-size: 18px;
+  color: blue;
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Maze</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #7F27FF;
+      font-family: 'Comic Sans MS', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #FFFFFF;
+    }
+
+    .container {
+      background-color: #F5E5E1;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+      text-align: center;
+      width: 90%;
+      max-width: 700px;
+      animation: fadeIn 1s ease-in-out;
+      color: #7F27FF;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      color: #7F27FF;
+      margin-bottom: 10px;
+    }
+
+    .instructions {
+      font-size: 1.1rem;
+      color: #7F27FF;
+      margin-bottom: 20px;
+    }
+
+    .maze-box {
+      background-color: #FFFFFF;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(127, 39, 255, 0.2);
+    }
+
+    .question {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #7F27FF;
+      font-weight: bold;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .options button {
+      padding: 15px 25px;
+      font-size: 1.4rem;
+      background: #7F27FF;
+      border: 2px solid #F5E5E1;
+      border-radius: 12px;
+      cursor: pointer;
+      color: #FFFFFF;
+      transition: 0.3s ease;
+    }
+
+    .options button:hover {
+      background: #F5E5E1;
+      color: #7F27FF;
+      border-color: #FFFFFF;
+    }
+
+    #status {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #FFFFFF;
+    }
+
+    #restart {
+      margin-top: 20px;
+      display: none;
+      font-size: 1.1rem;
+      padding: 10px 20px;
+      background: #7F27FF;
+      border: 2px solid #F5E5E1;
+      color: #FFFFFF;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #restart:hover {
+      background: #F5E5E1;
+      color: #7F27FF;
+    }
+
+    .correct {
+      background-color: #F5E5E1 !important;
+      color: #7F27FF !important;
+      border-color: #FFFFFF !important;
+      font-weight: bold;
+    }
+
+    .wrong {
+      background-color: #FFFFFF !important;
+      color: #7F27FF !important;
+      border-color: #F5E5E1 !important;
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">🧠 Math Maze 🌀</h1>
+    <p class="instructions">Solve to move through the maze. Choose the correct path!</p>
+
+    <div class="maze-box">
+      <div id="question" class="question">Loading...</div>
+      <div class="options" id="options"></div>
+    </div>
+
+    <div id="status"></div>
+    <button id="restart" onclick="startMaze()">🔁 Restart</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

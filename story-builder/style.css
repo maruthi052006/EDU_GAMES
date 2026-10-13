@@ -1,0 +1,16 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e6f2ff, #ffffff);
+}
+
+.story-box {
+  display: none;
+  background-color: #f0fdf4;
+  border-left: 5px solid #198754;
+  transition: all 0.4s ease-in-out;
+}
+
+#story {
+  font-style: italic;
+  color: #333;
+}

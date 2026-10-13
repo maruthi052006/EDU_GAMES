@@ -1,0 +1,80 @@
+body {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  background: linear-gradient(to bottom, #fff8e1, #ffe0b2);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  padding: 40px 20px;
+}
+
+h1 {
+  color: #d84315;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+#spinner-area {
+  margin: 30px 0;
+}
+
+#letter-display {
+  font-size: 6rem;
+  color: #4e342e;
+  margin-bottom: 20px;
+  font-weight: bold;
+  border: 6px dashed #bf360c;
+  width: 120px;
+  height: 120px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #fff3e0;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background: #ff7043;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #d84315;
+}
+
+#prompt-area {
+  margin-top: 30px;
+}
+
+input {
+  padding: 10px;
+  width: 250px;
+  font-size: 1.1rem;
+  border: 2px solid #ff5722;
+  border-radius: 6px;
+}
+
+#feedback {
+  margin-top: 15px;
+  font-size: 1.2rem;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 40px;
+  text-decoration: none;
+  background-color: #ffab91;
+  padding: 10px 18px;
+  border-radius: 10px;
+  color: #4e342e;
+  font-weight: bold;
+}

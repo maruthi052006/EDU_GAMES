@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Science Safari: Explore the Wonders</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #7F27FF;
+      color: #F5E5E1;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.92); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .quiz-container {
+      background-color: #7F27FF;
+      border: 2px solid #F5E5E1;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 25px rgba(245, 229, 225, 0.3);
+      width: 90%;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      color: #F5E5E1;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 4px #FFFFFF;
+    }
+
+    #question {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: #FFFFFF;
+    }
+
+    .btn-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 10px 15px;
+      border-radius: 10px;
+      border: 2px solid #F5E5E1;
+      background-color: #F5E5E1;
+      color: #7F27FF;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #FFFFFF;
+      color: #7F27FF;
+    }
+
+    .next-btn {
+      background-color: #F5E5E1;
+      color: #7F27FF;
+      font-weight: bold;
+      border: 2px solid #FFFFFF;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #score-section {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      color: #F5E5E1;
+    }
+  </style>
+</head>
+<body class="fade-in">
+  <div class="quiz-container">
+    <h1 class="title">🧬 Science Safari: Explore the Wonders</h1>
+    <div id="question-container">
+      <div id="question">Loading question...</div>
+      <div id="answer-buttons" class="btn-grid"></div>
+    </div>
+    <div class="controls">
+      <button id="next-btn" class="next-btn">Next</button>
+    </div>
+    <div id="score-section" class="hidden">
+      <h2>🎉 Safari Completed!</h2>
+      <p id="score-text"></p>
+      <button onclick="location.reload()">Play Again</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

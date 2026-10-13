@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Time Travel Trivia</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #7F27FF; /* solid background color */
+      color: #FFFFFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .quiz-container {
+      background-color: #F5E5E1; /* container base color */
+      padding: 40px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3);
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+      color: #7F27FF;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .title {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #FFFFFF;
+      text-shadow: 1px 1px 4px #F5E5E1;
+    }
+
+    #era-title {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      color: #FFFFFF;
+      text-shadow: 1px 1px 3px #F5E5E1;
+    }
+
+    #question {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #7F27FF;
+    }
+
+    .btn-grid {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 15px 25px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background-color: #FFFFFF;
+      color: #7F27FF;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background-color: #F5E5E1;
+    }
+
+    .next-btn {
+      margin-top: 30px;
+      background-color: #FFFFFF;
+      color: #7F27FF;
+      font-weight: bold;
+    }
+
+    .correct {
+      background-color: #F5E5E1 !important;
+      color: #7F27FF !important;
+    }
+
+    .wrong {
+      background-color: #FFFFFF !important;
+      color: #7F27FF !important;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #score-section h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      color: #FFFFFF;
+      text-shadow: 1px 1px 4px #F5E5E1;
+    }
+
+    #score-text {
+      font-size: 1.3rem;
+      color: #FFFFFF;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1 class="title">⏳ Time Travel Trivia</h1>
+    <h2 id="era-title">Loading Era...</h2>
+    <div id="question-container">
+      <div id="question">Loading question...</div>
+      <div id="answer-buttons" class="btn-grid"></div>
+    </div>
+    <div class="controls">
+      <button id="next-btn" class="next-btn">Next</button>
+    </div>
+    <div id="score-section" class="hidden">
+      <h2>🏆 Quiz Completed!</h2>
+      <p id="score-text"></p>
+      <button onclick="location.reload()">Play Again</button>
+    </div>
+  </div>
+</body>
+</html>

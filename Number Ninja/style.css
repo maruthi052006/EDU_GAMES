@@ -1,0 +1,98 @@
+/* Number Ninja - Cinematic Style */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at center, #1d1f27 0%, #0f1115 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: white;
+}
+
+.container {
+  background: #222;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  border: 3px solid #4cd137;
+}
+
+.title {
+  font-size: 2.7rem;
+  color: #f5f6fa;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 8px #4cd137;
+}
+
+.instructions {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+.question-box {
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #f1f2f6;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.options button {
+  padding: 12px 28px;
+  font-size: 1.2rem;
+  background-color: #2ecc71;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 2px 2px 10px #000;
+}
+
+.options button:hover {
+  background-color: #27ae60;
+  transform: scale(1.05);
+}
+
+#feedback {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+#next {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  background: #00cec9;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  display: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#next:hover {
+  background-color: #00b894;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

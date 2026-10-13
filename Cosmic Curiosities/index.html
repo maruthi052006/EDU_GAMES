@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cosmic Curiosities: Space Science Quiz</title>
+  <style>
+    /* === GLOBAL THEME COLORS === */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #7F27FF; /* purple main background */
+      color: #2D2D2D;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 30px;
+      background-color: #FFFFFF; /* clean white card */
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      color: #7F27FF; /* title purple */
+    }
+
+    h2 {
+      font-size: 1.6em;
+      margin-bottom: 30px;
+      color: #5A189A; /* darker purple accent */
+    }
+
+    #question {
+      font-size: 1.4em;
+      margin-bottom: 20px;
+      color: #2D2D2D;
+    }
+
+    .btn-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 1em;
+      border: 2px solid #7F27FF;
+      border-radius: 12px;
+      cursor: pointer;
+      background-color: #F5E5E1; /* soft pink tone */
+      color: #2D2D2D;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    button:hover {
+      background-color: #7F27FF;
+      color: #FFFFFF;
+      transform: scale(1.05);
+    }
+
+    #next-btn {
+      background-color: #7F27FF;
+      color: #FFFFFF;
+      font-weight: bold;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    #next-btn:hover {
+      background-color: #5A189A;
+    }
+
+    .correct {
+      background-color: #4CAF50 !important;
+      color: #FFFFFF !important;
+    }
+
+    .wrong {
+      background-color: #F44336 !important;
+      color: #FFFFFF !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>✨ Cosmic Curiosities</h1>
+    <h2>Space Science Quiz</h2>
+    <div id="quiz-container">
+      <div id="question">Loading...</div>
+      <div id="answer-buttons" class="btn-grid"></div>
+      <button id="next-btn">Next</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

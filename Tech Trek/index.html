@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Trek: Discover the Digital World</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #7F27FF; /* main solid background */
+      margin: 0;
+      padding: 0;
+      color: #FFFFFF;
+    }
+
+    .quiz-container {
+      max-width: 800px;
+      margin: 60px auto;
+      background-color: #F5E5E1; /* container base color */
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+      text-align: center;
+      color: #7F27FF;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      color: #FFFFFF;
+      text-shadow: 1px 1px 4px #F5E5E1;
+      margin-bottom: 30px;
+    }
+
+    #question {
+      font-size: 1.5rem;
+      color: #FFFFFF;
+      margin-bottom: 25px;
+    }
+
+    .btn-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 12px;
+      background-color: #FFFFFF;
+      color: #7F27FF;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #F5E5E1;
+      color: #7F27FF;
+      transform: scale(1.05);
+    }
+
+    .next-btn {
+      background-color: #FFFFFF;
+      color: #7F27FF;
+      font-weight: bold;
+    }
+
+    .controls {
+      margin-top: 10px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .correct {
+      background-color: #F5E5E1 !important;
+      color: #7F27FF !important;
+    }
+
+    .wrong {
+      background-color: #FFFFFF !important;
+      color: #7F27FF !important;
+    }
+
+    #score-section h2 {
+      font-size: 28px;
+      color: #FFFFFF;
+      text-shadow: 1px 1px 3px #F5E5E1;
+    }
+
+    #score-text {
+      font-size: 1.3rem;
+      color: #FFFFFF;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1 class="title">💻 Tech Trek: Discover the Digital World</h1>
+    <div id="question-container">
+      <div id="question">Loading question...</div>
+      <div id="answer-buttons" class="btn-grid"></div>
+    </div>
+    <div class="controls">
+      <button id="next-btn" class="next-btn">Next</button>
+    </div>
+    <div id="score-section" class="hidden">
+      <h2>🎉 Trek Completed!</h2>
+      <p id="score-text"></p>
+      <button onclick="location.reload()">Play Again</button>
+    </div>
+  </div>
+</body>
+</html>

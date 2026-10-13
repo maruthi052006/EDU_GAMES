@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>எழுத்து சுழலி - Tamil Letter Spinner</title>
+  <style>
+    /* ===== GLOBAL THEME ===== */
+    body {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      background-color: #7F27FF;
+      color: #F5E5E1;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 40px 20px;
+      background-color: #7F27FF;
+      border: 2px solid #F5E5E1;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(245, 229, 225, 0.3);
+    }
+
+    h1 {
+      color: #F5E5E1;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #F5E5E1;
+      font-size: 1.2rem;
+    }
+
+    #spinner-area {
+      margin: 30px 0;
+    }
+
+    #letter-display {
+      font-size: 6rem;
+      color: #7F27FF;
+      background-color: #F5E5E1;
+      font-weight: bold;
+      border: 6px dashed #F5E5E1;
+      width: 140px;
+      height: 140px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(245, 229, 225, 0.4);
+    }
+
+    button {
+      padding: 10px 25px;
+      font-size: 1.2rem;
+      background-color: transparent;
+      border: 2px solid #F5E5E1;
+      color: #F5E5E1;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #F5E5E1;
+      color: #7F27FF;
+    }
+
+    #prompt-area {
+      margin-top: 40px;
+    }
+
+    input {
+      padding: 10px;
+      width: 250px;
+      font-size: 1.1rem;
+      border: 2px solid #F5E5E1;
+      border-radius: 8px;
+      background-color: transparent;
+      color: #F5E5E1;
+      text-align: center;
+      outline: none;
+    }
+
+    input::placeholder {
+      color: rgba(245, 229, 225, 0.7);
+    }
+
+    #feedback {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      color: #F5E5E1;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      border: 2px solid #F5E5E1;
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: #F5E5E1;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #F5E5E1;
+      color: #7F27FF;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎡 எழுத்து சுழலி</h1>
+    <p>சுழற்ற பொத்தானை அழுத்தி ஒரு தமிழ் எழுத்தை தேர்ந்தெடுங்கள்!</p>
+
+    <div id="spinner-area">
+      <div id="letter-display">?</div>
+      <button onclick="spinLetter()">சுழற்று</button>
+    </div>
+
+    <div id="prompt-area">
+      <p>இந்த எழுத்தில் தொடங்கும் ஒரு சொல்லை நீங்கள் சொல்லுங்கள் அல்லது எழுதுங்கள்:</p>
+      <input type="text" id="userWord" placeholder="உங்கள் சொல் இங்கு..." />
+      <button onclick="checkWord()">சரி</button>
+      <p id="feedback"></p>
+    </div>
+
+    <a href="../index.html" class="back-btn">🏠 முதன்மை பக்கம்</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

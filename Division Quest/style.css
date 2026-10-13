@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #fdcb6e, #e17055);
+  font-family: 'Comic Sans MS', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 90%;
+  max-width: 700px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #d35400;
+  margin-bottom: 10px;
+}
+
+.instructions {
+  font-size: 1.1rem;
+  color: #2d3436;
+  margin-bottom: 20px;
+}
+
+.quest-box {
+  background: #ffeaa7;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2d3436;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.options button {
+  padding: 15px 25px;
+  font-size: 1.4rem;
+  background: #55efc4;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.options button:hover {
+  background: #00cec9;
+  color: white;
+}
+
+#status {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#restart {
+  margin-top: 20px;
+  display: none;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  background: #fab1a0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#restart:hover {
+  background: #d63031;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}

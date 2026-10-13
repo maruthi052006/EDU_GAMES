@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📐 Geometry Dash - Shapes Game</title>
+  <style>
+    /* Base theme colors */
+    :root {
+      --main-bg: #7F27FF;
+      --accent: #F5E5E1;
+      --text: #F5E5E1;
+    }
+
+    /* Body styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--main-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: var(--text);
+    }
+
+    /* Main quiz container */
+    .container {
+      background-color: var(--main-bg);
+      border: 2px solid var(--accent);
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 10px 40px rgba(245, 229, 225, 0.3);
+      max-width: 700px;
+      width: 90%;
+      text-align: center;
+      animation: fadeIn 1s ease;
+      position: relative;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .instructions {
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-bottom: 30px;
+    }
+
+    .question-box {
+      font-size: 1.7rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .options button {
+      padding: 12px 26px;
+      font-size: 1.1rem;
+      background-color: var(--accent);
+      color: var(--main-bg);
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s, background-color 0.3s, color 0.3s;
+      box-shadow: 0 4px 10px rgba(245, 229, 225, 0.2);
+    }
+
+    .options button:hover {
+      background-color: var(--main-bg);
+      color: var(--accent);
+      transform: scale(1.05);
+    }
+
+    /* Centered feedback */
+    #feedback {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2rem;
+      font-weight: bold;
+      display: none;
+      padding: 15px 30px;
+      border-radius: 15px;
+      background: var(--main-bg);
+      box-shadow: 0 4px 25px rgba(245, 229, 225, 0.4);
+      border: 2px solid var(--accent);
+      animation: pop 0.5s ease;
+      color: var(--accent);
+    }
+
+    /* Feedback color classes */
+    #feedback.correct {
+      display: block;
+    }
+
+    #feedback.wrong {
+      display: block;
+    }
+
+    /* Next button */
+    #next {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      padding: 10px 20px;
+      background: var(--accent);
+      color: var(--main-bg);
+      border: none;
+      border-radius: 10px;
+      display: none;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    #next:hover {
+      background-color: var(--main-bg);
+      color: var(--accent);
+      border: 2px solid var(--accent);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pop {
+      0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+      100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">📐 Geometry Dash</h1>
+    <p class="instructions">Choose the correct answer to each shape-related question!</p>
+
+    <div class="question-box" id="question">What shape has 4 equal sides?</div>
+    <div class="options">
+      <button onclick="showFeedback(false)">Triangle</button>
+      <button onclick="showFeedback(false)">Circle</button>
+      <button onclick="showFeedback(true)">Square</button>
+      <button onclick="showFeedback(false)">Rectangle</button>
+    </div>
+
+    <div id="feedback"></div>
+    <button id="next" onclick="loadNext()">Next ➡️</button>
+  </div>
+
+  <script>
+    const feedback = document.getElementById("feedback");
+    const nextBtn = document.getElementById("next");
+
+    function showFeedback(isCorrect) {
+      feedback.textContent = isCorrect ? "✅ Correct!" : "❌ Wrong!";
+      feedback.className = isCorrect ? "correct" : "wrong";
+      feedback.style.display = "block";
+      nextBtn.style.display = "inline-block";
+
+      setTimeout(() => {
+        feedback.style.display = "none";
+      }, 1000);
+    }
+
+    function loadNext() {
+      feedback.style.display = "none";
+      nextBtn.style.display = "none";
+      alert("Next question logic here!");
+    }
+  </script>
+</body>
+</html>
